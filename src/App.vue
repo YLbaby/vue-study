@@ -1,21 +1,15 @@
 <template>
-  <div>
-    <h1>{{msg}}</h1>
-    <Student />
-    <School />
+  <div class="container">
+    <Search />
+    <List />
   </div>
 </template>
 
 <script>
-  import School from './components/School'
-  import Student from './components/Student'
+  import Search from "./components/Search";
+  import List from "./components/List";
   export default {
     name: 'App',
-    components: {School, Student},
-    data() {
-      return {
-        msg: '你好啊'
-      }
-    }
+    components: {Search, List}
   }
 </script>
