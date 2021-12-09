@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-  <!--展示用户列表-->
+    <!--展示用户列表-->
     <div v-show="info.users.length" class="card" v-for="user in info.users" :key="user.login">
       <a :href="user.html_url" target="_blank">
         <img :src="user.avatar_url" style='width: 100px'/>

@@ -1,15 +1,29 @@
 <template>
   <div class="container">
-    <Search />
-    <List />
+    <Category title="美食" :listData="foods"/>
+    <Category title="游戏" :listData="games"/>
+    <Category title="电影" :listData="films"/>
   </div>
 </template>
 
 <script>
-  import Search from "./components/Search";
-  import List from "./components/List";
+  import Category from "./components/Category";
   export default {
     name: 'App',
-    components: {Search, List}
+    components: {Category},
+    data() {
+      return {
+        foods: ['火锅', '烧烤', '小龙虾', '牛排'],
+        games: ['红色警戒', '穿越火线', '劲舞团', '超级玛丽'],
+        films: ['《肖申克的救赎》', '《拆弹专家》', '《你好，李焕英》', '《李晓东》']
+      }
+    }
   }
 </script>
+
+<style>
+  .container {
+    display: flex;
+    justify-content: space-around;
+  }
+</style>
