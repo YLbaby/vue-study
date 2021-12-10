@@ -1,16 +1,19 @@
 <template>
   <div class="category">
     <h3>{{ title }}分类</h3>
-    <ul>
-      <li v-for="(item, index) in listData" :key="index">{{item}}</li>
-    </ul>
+    <slot :games="games" msg="hello">我是默认的一些内容</slot>
   </div>
 </template>
 
 <script>
 export default {
   name: "Category",
-  props: ['listData', 'title']
+  props: ['title'],
+  data() {
+    return {
+      games: ['红色警戒', '穿越火线', '劲舞团', '超级玛丽'],
+    }
+  }
 }
 </script>
 
@@ -23,5 +26,11 @@ export default {
  h3 {
    text-align: center;
    background-color: orange;
+ }
+ img{
+   width: 100%;
+ }
+ video {
+   width: 100%;
  }
 </style>
