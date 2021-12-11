@@ -1,8 +1,7 @@
 <template>
   <div>
-    <h1>当前求和为: {{sum}}</h1>
-    <h3>当前数字乘10后为: {{bigSum}}</h3>
-    <h3>我在{{school}}，学习{{subject}}</h3>
+    <h1>当前求和为: {{$store.state.sum}}</h1>
+    <h3>当前数字乘10后为: {{$store.getters.bigSum}}</h3>
     <!-- v-model.number 收集到的数据强制转为number-->
     <select v-model.number="n">
       <option value="1">1</option>
@@ -17,22 +16,13 @@
 </template>
 
 <script>
-import {mapGetters, mapState} from "vuex";
-
 export default {
   name: "Count.vue",
   data() {
     return {
       n: 1,  // 用户选择的数字
+      sum: 0 // 当前的和
     }
-  },
-  computed: {
-    // 对象法
-    // ...mapState({he:'sum', xuexiao:'school', xueke:'subject'}),
-    // ...mapGetters({dahe:'bigSum'}),
-    // 数组法
-    ...mapState(['sum', 'school', 'subject']),
-    ...mapGetters(['bigSum'])
   },
   methods: {
     increment() {

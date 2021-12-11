@@ -43,9 +43,7 @@ const mutations = {
 
 // 准备state --> 用于存储数据
 const state = {
-    sum: 0,
-    school: '尚硅谷',
-    subject: '前端'
+    sum: 0
 }
 
 const getters = {
