@@ -10,28 +10,23 @@ import Detail from "../pages/Detail";
 export default new VueRouter({
     routes: [
         {
-            name: 'about',
             path: '/about',
             component: About
         },
         {
-            name: 'home',
             path: '/home',
             component: Home,
             children: [
                 {
-                    name: 'news',
                     path: 'news',
                     component: News
                 },
                 {
-                    name: 'message',
                     path: 'message',
                     component: Message,
                     children: [
                         {
-                            name: 'detail',
-                            path: 'detail/:id:/title',
+                            path: 'detail',
                             component: Detail
                         }
                     ]
