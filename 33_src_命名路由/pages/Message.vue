@@ -12,7 +12,7 @@
         <!--跳转路由并携带query参数，to的对象写法-->
         <router-link :to="{
           name: 'detail',
-          query: {
+          params: {
             id: m.id,
             title: m.title
           }
